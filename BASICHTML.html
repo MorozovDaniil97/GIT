@@ -1,0 +1,94 @@
+<!--задает тип документа-->
+<!DOCTYPE html>
+<!--вся HTML страница--> 
+<html lang="ru">
+    <!--голова кода сайта - кодировка, автор, описание и тд-->
+    <head>
+        <!--указываем кодировку страницы, что бы браузер её понимал-->
+        <meta charset="utf-8">
+        <!--link - линки на URL/CSS и тд; stylesheet Определяет, что подключаемый файл хранит таблицу стилей (CSS)/далее путь к файлу прописываем-->
+        <link rel="stylesheet" href="CSS/BASICSTYLE.css">
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+        <!--пишем название страницы-->
+        <title>BASIC HTML</title>
+        </head>
+    <!--состав/тело/скелет - содержиться основа-->
+    <body>
+        <!-- style - задаем КРАСОТУ CSS(можно ещё это прописывать в хар-ах подблока, внутри условного h2; можно задать class (второй класс будет важнее первого) и через style покрасить; font-size - размер текста; font-family - шрифт; можно экспортировать с Google Font  URL шрифта, предварительно сделав link href на него; border - рамка; width - ширина; radius - закругление PX или %; margin(внешний отступ)/padding (внутренний отступ) top/right/bottom/left (как часы; что бы писать значение в одну строчку); - управление размерами блоков; id = '#' главнее class = '.'  - управление размерами блоков)-->
+        <style>
+           [type='checkbox'] {
+              margin: 10px 0px 15px 0px;
+           }
+            .thick-green-border {
+                border-color: green;
+                border-width: 10px;
+                border-style: solid;
+                border-radius: 10px;
+            }
+            .red-text{
+                color:blue;
+                
+            }
+            .silver-background {
+                background-color: silver;
+            }
+            #cat-photo-form {
+                background-color: rgba(227, 228, 227, 0.068);
+            }
+            .smaller-image{
+                width: 100px;
+            }
+            p {
+                font-size: 16px;
+                font-family: monospace;
+            }
+             h2 {
+                font-family: Lobster, monospace;
+            }
+        </style>
+        <!--h - заголовок 1-6, чаще 1-4; удалили h1 - самый большой размер заголовка; class - класс для подвязки к примеру с цветом-->
+        <h2 class="red text">CatPhotoApp</h2>
+        <!--main=ОСНОВНОЕ СОДЕРЖАНИЕ СТРАНИЦЫ: его использование необходимо исключительно с тегом <aside> . Чтобы разделить сайт на часть сайтбара и основную контентную часть сайта. Если вы не используете боковую панель на сайте, то и main не стоит использовать - инфа не точная, нашел на ХАБРе."-->
+        <main>
+            <!--a - тег для создание ссылки на другую страницу, либо испольем анчором; href=гиперссылка с анчорным текстом(текст/название ссылки), который дает переход при клике по ней; target=указывает где открыть ссылку; _blank=в новом окне; a href=# - мертвая ссылка для дальнейшей подвязки; в a href можно вложить картинку так же, как и ссылку-->
+            <p class="red-text">View more <a href="https://www.freecatphotoapp.com" target="_blank">cat photos</a></p>
+            <!--img src=это комбо тега с атрибутом позволяет добавлять URL ссылки на изображеие, что бы было видно картинку; alt= то, что видет пользователь, если изображение не грузит-->
+            <a><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
+            <!-- div - блочный контейнер, служит для структуризации и упорядочнение сайта; ul - открывает неупорядочный список; ol - открывает упорядочный список li - колонки списка-->
+            <div class="silver-background">
+                <p>Things cats love:</p> 
+            <ul>
+                <li>cat nip</li>
+                <li>laser pointers</li>
+                <li>lasagna</li>
+            </ul>
+            <p>Top 3 things cats hate:</p>
+            <ol>
+                <li>dogs</li>
+                <li>bears</li>
+                <li>racoons</li>
+            </ol>
+            </div>
+            <!--form - создание формы; action= направление, куда отправлять данны при работе с формой; id - равно класс, номер, для взаимодействия с конкретным элементом-->
+            <form id="cat-photo-form" action="https://www.freecatphotoapp.com/submit-cat-photo">
+            <!--label - ярлык, при клике на который фокус перейдет на связанный элемент; input type=radio name = круглые кнопки для выбора одной из name группы переключателей; value= без, по умолчанию значение on, так, это значение, стоимость; checked отмеченный сразу-->    
+                <label for="indoor"><input type="radio" value="indoor" id="indoor" name="indoor-outdoor" checked> Indoor</label>
+            <!--br - перенос строки СЛЕД после него-->
+                <label for="outdoor"><input id="outdoor" value="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label><br>
+            <!--type=checkbox - квадратные кнопки для выбора да/нет-->
+                <label for="lazy"><input id="lazy" type="checkbox" value="lazy" name="presonality" checked>Lazy</label>
+                <label for="energetic"><input id="energetic" value="energetic" name="personality" type="checkbox">Energetic</label>
+                <label for="loving"><input name="personality" value="loving" type="checkbox" id="loving">Loving</label><br>
+                <!--input - для ввода инфы пользователем; type=text - тип инфы = текст; placeholder = заполнитель; required - обяз для заполнения-->
+                <input type="text" placeholder="cat photo URL" required>
+                <!--button - буквально создает кнопку; тип кнопки submit = отправить данные из вашей формы на URL-адрес, указанный в action;-->
+                <button type="submit">Submit</button>
+            </form>
+            <!--=абзац,"параграф"-->
+            <p>Meowwww loved it, hated it, loved it, hated it yet spill litter box, scratch at owner, destroy all furniture, especially couch or lay on arms while you're using the keyboard.</p>  
+            <p>Intently stare at the same spot poop in the plant pot but kitten is playing with dead mouse.</p>
+            <!--footer=нижний колонтитул; id=присваиваем значение тегу(прим.), для его возможного использование в качестве в гиперссылки-->
+            <footer id="footer">"Copyright Cat Photo App"</footer>
+        </main>
+    </body>
+</html>
