@@ -74,7 +74,7 @@
             </div>
             <!--form - создание формы; action= направление, куда отправлять данны при работе с формой; id - равно класс, номер, для взаимодействия с конкретным элементом-->
             <form id="cat-photo-form" action="https://www.freecatphotoapp.com/submit-cat-photo">
-            <!--label - ярлык, при клике на который фокус перейдет на связанный элемент; input type=radio name = круглые кнопки для выбора одной из name группы переключателей; value= без, по умолчанию значение on, так, это значение, стоимость, так же можно задать переменную поставив --; checked отмеченный сразу-->    
+            <!--label - ярлык, при клике на который фокус перейдет на связанный элемент; input - входные данные пользователя; type=radio name = круглые кнопки для выбора одной из name группы переключателей; value= без, по умолчанию значение on, так, это значение, стоимость, так же можно задать переменную поставив --; checked отмеченный сразу-->    
                 <label for="indoor"><input type="radio" value="indoor" black; id="indoor" name="indoor-outdoor" checked> Indoor</label>
             <!--br - перенос строки СЛЕД после него-->
                 <label for="outdoor"><input id="outdoor" value="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label><br>
@@ -82,7 +82,7 @@
                 <label for="lazy"><input id="lazy" type="checkbox" value="lazy" name="presonality" checked>Lazy</label>
                 <label for="energetic"><input id="energetic" value="energetic" name="personality" type="checkbox">Energetic</label>
                 <label for="loving"><input name="personality" value="loving" type="checkbox" id="loving">Loving</label><br>
-                <!--input - для ввода инфы пользователем; type=text - тип инфы = текст; placeholder = заполнитель; required - обяз для заполнения-->
+                <!--input - для ввода инфы пользователем; type=text - тип инфы = текст; placeholder = то, что отображается в input, до того как пользователь что то введет; required - обяз для заполнения-->
                 <input type="text" placeholder="cat photo URL" required>
                 <!--button - буквально создает кнопку; тип кнопки submit = отправить данные из вашей формы на URL-адрес, указанный в action;-->
                 <button type="submit">Submit</button>
