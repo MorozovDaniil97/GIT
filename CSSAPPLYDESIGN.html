@@ -1,8 +1,7 @@
 <style>
    h4 {
       /**hieght - высота;*/
-     /**height: 25px;
-     */
+     /**height: 25px;*/
      padding: 10px;
      /**text-align: justify/center/right/left - выравнивание меж строчная одинаковая ширина/центровка/по правому краю/по левому краю;*/
      text-align: center;
@@ -13,13 +12,14 @@
      font-weight: 300;
      /**text-transform - изменения тейкста lc - мал, uc - бол, cptl, - загл буква, none - исходник;*/
      text-transform: capitalize;
-     /**position: - перемещение (в противоположенном направлении от указанной стороны) эелемента относительно обычного потока страницы; relative = зависимы; absolutely - независимый*/
-     position::
+     /**position: - перемещение (в противоположенном направлении от указанной стороны) эелемента относительно обычного потока страницы; relative = зависимы; absolutely - независимый;*/
+     position: relative;
      top: 5px;
+
    }
    p {
      text-align: justify;
-     /**line-height - межстрочное вертикально пространство*/
+     /**line-height/width - межстрочное вертикально пространство/горизонтальное пространство*/
      line-height: 25px;
    }
    .links {
@@ -27,17 +27,49 @@
      text-align: left;
      /**opacity - непрозрачность, где 1 непрозрачно, 0.5 полупрозрачно, 0 полностью прозрачно*/
      opacity: 0.7;
+     /**float - плавающее значени, подходит к section и aside;*/
+     float: left;
+     width: 10%;
+   }
+   .links2 {
+     margin-right: 20px;
+     text-align: left;
+     /**opacity - непрозрачность, где 1 непрозрачно, 0.5 полупрозрачно, 0 полностью прозрачно*/
+     opacity: 0.7;
+     /**float - плавающее значени, подходит к section и aside;*/
+     float: right;
+     width: 10%;
    }
    .fullCard {
+     background-color: red;
      width: 245px;
+     height: 300px;
      border: 1px solid #ccc;
      border-radius: 5px;
      margin: 10px 5px;
-     padding: 4px;
+     padding: 10px;
+     /**z-index - при позиции absolutely, читая сверху вниз, можно указать целое значение, для приоритета отображение поверх (значение больше, приоритет выше)*/
+     position: absolute;
+     z-index: 2;
+   }
+   .blue-box {
+      background-color: blue;
+      height: 100px;
+      width: 900px;
+      margin: auto;
+      position: absolute;
+      z-index: 1;
+   }
+   .red-box {
+      background-color: red;
+      height: 150px;
+      width: 150px;
+      /**если не указана позиция, тогла margin: auto - центровка блока*/
+      margin: auto;
    }
    #thumbnail {
      /**box-shadow - тень (горизонталь, вертикаль, внешний радиус, внутр радиус, цвет тени)*/
-     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+     box-shadow: 0 40px 50px rgba(0,0,0,0.19), 0 6px 6px rgba(253, 165, 2, 0.945);
    }
    .cardContent {
      padding: 10px;
@@ -49,8 +81,9 @@
    a:hover {
          color: blue;
       }
-
  </style>
+ <div class="red-box"></div>
+ <div class="blue-box"></div>
  <div class="fullCard" id="thumbnail">
    <div class="cardContent">
      <div class="cardText">
@@ -61,7 +94,7 @@
      </div>
      <div class="cardLinks">
        <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page<br><br></a>
-       <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
+       <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links2">Sergey Brin</a>
      </div>
    </div>
  </div>
