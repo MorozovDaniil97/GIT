@@ -84,9 +84,40 @@
    a {
       color: black;
    }
-   a:hover {
-         color: blue;
-      }
+   .heart {
+    position: absolute;
+    margin: 500px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    transform: ;
+  }
+  /**after - последний дочерний элементы выбранного heart (прим);*/
+   .heart::after {
+    background-color: blue;
+    content: "";
+    border-radius: 25%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+  }
+  /**before - первый дочерний элементы выбранного heart (прим);*/
+  .heart::before {
+    content: ;
+    background-color: pink;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+  }
  </style>
  <div class="red-box"></div>
  <div class="blue-box"></div>
@@ -101,6 +132,8 @@
      <div class="cardLinks">
        <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page<br><br></a>
        <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links2">Sergey Brin</a>
+       <div class="heart">
+       </div>
      </div>
    </div>
  </div>
