@@ -84,7 +84,37 @@
    a {
       color: black;
    }
-   
+   /** animation-name - задаем имя анимации/animation-duration - длительность этой анимации/animation-fill-mode: forwards - определяет стиль применяемый позавершения анимации; animation-iteration-count: infinite - непрерывная анмимация; animation-timing-function - скорость изменения исполняемой анимации; @keyframes "имя анимации" - обащаемся к анимации и прописываем ей свойства; движение посредством top left и тд можно задать ТОЛЬКО если объявленная позиция FIXED или RELATIVE*/
+   button {
+    border-radius: 5px;
+    color: white;
+    background-color: #0F5897;
+    padding: 5px 10px 8px 10px;
+    position: relative;
+  }
+  button:hover {
+    animation-name: background-color;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+   }
+   @keyframes background-color {
+      0% {
+         top: 0px;
+         left: 0px;
+      }
+      50% {
+         top: 25px;
+         left: 25px;
+         opacity: 0.2;
+      }
+    100% {
+      background-color: #4791d0;
+      top: -25px;
+      left: -25px;
+    }
+  }
  </style>
  <div class="red-box"></div>
  <div class="blue-box"></div>
@@ -99,6 +129,7 @@
      <div class="cardLinks">
        <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page<br><br></a>
        <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links2">Sergey Brin</a>
+       <div><button>BUTTON</button></div>
      </div>
    </div>
  </div>
