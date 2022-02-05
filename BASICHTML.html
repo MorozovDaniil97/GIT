@@ -72,6 +72,9 @@
                 <li>racoons</li>
             </ol>
             </div>
+            <!--fielset - окружает группу переключателей; legend - описание группы переключателей-->>
+            <fieldset>
+               <legend>Try to choose:</legend>
             <!--form + action= получаем от пользователя информацию (прим. Логин / Пароль), при использовании SUBMIT отправляет данные на ссылку в action)-->
             <form id="cat-photo-form" action="https://www.freecatphotoapp.com/submit-cat-photo">
             <!--label - связь необходимая, чтобы изменять значения элементов формы (прим. кнопки) при нажатии курсором мыши на текст.; input - входные данные пользователя; type=radio name = круглые кнопки для выбора одной из name группы переключателей; value= без, по умолчанию значение on, так, это значение, стоимость, так же можно задать переменную поставив --; checked отмеченный сразу-->    
@@ -82,9 +85,10 @@
                 <label for="lazy"><input id="lazy" type="checkbox" value="lazy" name="presonality" checked>Lazy</label>
                 <label for="energetic"><input id="energetic" value="energetic" name="personality" type="checkbox">Energetic</label>
                 <label for="loving"><input name="personality" value="loving" type="checkbox" id="loving">Loving</label><br>
-                <!--input - для ввода инфы пользователем; type=text - тип инфы = текст; "placeholder = то, что отображается в input, до того как пользователь что то введет; required - обяз для заполнения-->
+                <!--input - для ввода инфы пользователем; type=text/date - тип инфы = текст/дата"; placeholder = то, что отображается в input, до того как пользователь что то введет; required - обяз для заполнения-->
                 <input type="text" placeholder="cat photo URL" required>
                 <!--button - буквально создает кнопку; тип кнопки submit = отправить данные из вашей формы на URL-адрес, указанный в action;-->
+               </fieldset>
                 <button type="submit">Submit</button>
             </form>
             <!--p=абзац,"параграф"-->
