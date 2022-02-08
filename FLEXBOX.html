@@ -1,0 +1,82 @@
+<style>
+* {
+   padding: 0;
+   margin: 0;
+}
+   
+.container-1 div, .container-2 div {
+   padding: 10px;
+   border: 1px solid silver;
+}
+
+/*даем установку, что рабоют свойства ниже перечисленные ТОЛЬКо на разрешении равно и меньше 500px*/
+@media (min-width: 600px) {
+.container-1 {
+   /**блок натурально флексит, теперь им можно управлять*/
+   display: flex;
+/** column/row (по умолчанию) - вертикальное /горизонтальное выстраивание блоков, один под одним; -reverse - переворачивает очередь вверх ногами;*/
+   flex-direction: row;
+   }
+}
+/**свойства для FLEX CONTAINER*/
+.container-2 {
+   display: flex;
+   /**выравнивает flex-элементы вдоль главной оси - row горизонт, column вертикаль*/
+   justify-content: space-around;
+   /**выравнивает flex-элементы вдоль второстепенной оси / align-self - переопределяет items, для гибкой настройки*/
+   align-items: stretch;
+   /**ПЕРЕНОС no wrap - не перескакивают, если не хвататет места; wrap - становятся адаптивными*/
+   flex-wrap: wrap;
+}
+
+/**flex: grow / shrink / basis - сколько оставшегося пространства в контейнере flexbox должно быть назначено этому элементу / коэффициент сжатия элемента контейнера / Задает начальный размер элемента в контейнере (row гориз и column верт) / order - очередь*/
+.box-1 {
+   flex: 2;
+   order: 2;
+}
+
+.box-2 {
+   flex: 2;
+   order: 1;
+}
+
+.box-3 {
+   flex: 1;
+   order: 3;
+}
+
+/**basis = width*/
+.box {
+   flex-basis: 20%;
+}
+</style>
+
+<div class="container-1">
+   <div class="box-1">
+      <h3>Box 1</h3>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium accusantium sequi excepturi nihil corporis omnis sint quasi suscipit tempore cum quod nesciunt veritatis hic voluptates sed rem doloremque, sunt enim.</p>
+   </div>
+   <div class="box-2">
+      <h3>Box 2</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum vitae sunt officiis explicabo consequuntur eaque harum non quia quam excepturi atque, cum delectus quasi nisi nemo. Tempora exercitationem enim ab.</p>
+   </div>
+   <div class="box-3">
+      <h3>Box 3</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam fugit perferendis fugiat nam nihil asperiores dolore ipsum eius incidunt, deleniti numquam. Voluptates dolor aspernatur tempore odio mollitia adipisci quisquam ea?</p>
+   </div>
+</div>
+
+<div class="container-2">
+   <div class="box">
+      <h3>Box 1</h3>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium accusantium sequi excepturi nihil corporis omnis sint quasi suscipit tempore cum quod nesciunt veritatis hic voluptates sed rem doloremque, sunt enim.</p>
+   </div>
+   <div class="box">
+      <h3>Box 2</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum vitae sunt officiis explicabo consequuntur eaque harum non quia quam excepturi atque, cum delectus quasi nisi nemo. Tempora exercitationem enim ab.</p>
+   </div>
+   <div class="box">
+      <h3>Box 3</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam fugit perferendis fugiat nam nihil asperiores dolore ipsum eius incidunt, deleniti numquam. Voluptates dolor aspernatur tempore odio mollitia adipisci quisquam ea?</p>
+   </div>
+</div>

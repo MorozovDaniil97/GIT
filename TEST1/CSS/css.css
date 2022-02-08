@@ -5,7 +5,7 @@ main {
    border-radius: 5px;
    padding: 30px 15px;
 }
-
+/**Параметр max-widthof 100%гарантирует, что изображение никогда не будет шире контейнера, в котором оно находится, а параметр heightof autoсохранит исходное соотношение сторон изображения.*/
 .centered {
    max-width: 550px;
    margin: 0px auto;
