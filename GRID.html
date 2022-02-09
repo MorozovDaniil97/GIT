@@ -1,0 +1,60 @@
+<style>
+   .item1{background:LightSkyBlue;}
+   .item2{background:LightSalmon;}
+   .item3{background:PaleTurquoise;}
+   .item4{background:LightPink;}
+   .item5{background:PaleGreen;}
+ 
+   .container {
+     font-size: 40px;
+     width: 100%;
+     min-height: 300px;
+     background: LightGray;
+     /**grid - сетка (род .container дети grid_item);*/
+     display: grid;
+     /**добавляем столбцы, где каждое значение ширина столбца; Ширина первого столбца соответствует его содержимому, ширина второго столбца — 50 пикселей, размер третьего столбца — 10% от его контейнера, а для последних двух столбцов; оставшееся пространство разделено на три секции, две отведены под четвертую колонку, а одна – под пятую.
+     grid-template-columns: auto 50px 10% 2fr 1fr;*/
+
+     grid-template-columns: repeat (3, 1fr);
+     /**добавляем строки, где каждое щначение высота строки;*/
+     grid-template-rows: 1fr 1fr 1fr;
+     /**зазор между строками гориз.*/
+     grid-row-gap: 10px;
+     /**зазор между столбцами верт.*/
+     grid-column-gap: 10px;
+     /**межстрочное / межстобичное пространство одной функцией grid-gap*/
+
+     /**группировка ячеек сетки в область и дать области произвольное имя; Каждое слово представляет ячейку, а каждая пара кавычек представляет строку.*/
+     grid-template-areas:
+     "header header header"
+     "advert content content"
+     "footer footer footer";
+   }
+
+   .item5 {
+    background: PaleGreen;
+    /*свойство в сочетании с номерами линий, с которых вы хотите, чтобы элемент начинался и заканчивался*/
+    grid-column: 2/4;
+    grid-row: 2/4;
+    /**задаем расположение*/
+    grid-area: footer;
+    /*или так: пример потребляет строки между 3 и 4, столбцы между 1 и 4*/
+    grid-area: 3/1/4/4;
+   }
+
+   .item3 {
+    background: PaleTurquoise;
+    /**управление содержимым ячейки justify/align - гор/верт; self/items - конкретная себя / все; start/end/center - правый/левый/центр; по умолчанию stretch - автозаполнение по фулу*/
+    align-self: center;
+    justify-self: end;
+   }
+
+ </style>
+ 
+ <div class="container">
+   <div class="item1">1</div>
+   <div class="item2">2</div>
+   <div class="item3">3</div>
+   <div class="item4">4</div>
+   <div class="item5">5</div>
+ </div>
